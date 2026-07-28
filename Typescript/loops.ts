@@ -88,3 +88,64 @@ while(condition){
 
 */
 
+let attempt = 0
+
+while(attempt >3){
+    console.log("Username or password is incorrect")
+    attempt++;
+}
+
+// console.log("Your account have been locked for 24H");
+
+// 3. do while loop
+
+// Syntax:
+
+/*
+initialization
+
+do{
+    // block of code
+}while(condition);
+
+
+*/
+
+
+let att = 0
+
+do{
+    console.log("Username or password is incorrect")
+    att++
+}while(att>3);
+
+
+
+let array = [10,20,30,"TS", true]
+
+/*
+
+for(variable declaration of arrayName){
+    // code
+}
+
+Variable - It will get one by one the value from the iterable object
+
+
+*/
+
+for(let ele of array){
+    console.log(ele) 
+}
+
+
+let obj = {name: "Rahul", age:30, role: "SE", salary:100000}
+
+console.log(obj.name)
+console.log(obj["role"]);
+
+
+
+for(let key in obj){
+    console.log(key +":"+ obj[key]);
+}

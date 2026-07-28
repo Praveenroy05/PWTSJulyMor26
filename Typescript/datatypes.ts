@@ -112,6 +112,7 @@
     // 1. Array
     // 2. String
     // 3. Object - {key:value}
+    // 4. Function
 
 
 
