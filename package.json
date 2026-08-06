@@ -1,0 +1,23 @@
+{
+  "name": "pwtsjulymor26",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Praveenroy05/PWTSJulyMor26.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Praveenroy05/PWTSJulyMor26/issues"
+  },
+  "homepage": "https://github.com/Praveenroy05/PWTSJulyMor26#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.1.2"
+  }
+}

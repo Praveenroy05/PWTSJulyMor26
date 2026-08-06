@@ -107,8 +107,12 @@
 
     // objects
     // class
+
+
+    // Setup and installation of Playwright
     
-    
+    // npm install tsx
+    // npm init playwright
     
     
     
