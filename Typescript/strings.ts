@@ -62,7 +62,7 @@
     // 8. substring(startIndex, endIndex?) - Returns the portion of string
     console.log(str.substring(1));
     console.log(str.substring(5, 12));
-    console.log(str.substring(12, 5))
+    console.log(str.substring(12, 5)) // 5 strtIndex, 12 endIndex
 
 
     // 9. startsWith(string) - It checks if the string is starting with specified string
