@@ -22,6 +22,12 @@ a parallel mode
 
 
 
+// fileName.spec.ts
+// fileName.test.ts
+
+// fileName.ts
+
+
 
 
 /**
