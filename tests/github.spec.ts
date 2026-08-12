@@ -43,15 +43,9 @@
     // 2. "git checkout -b featureBrach" - Create a new brach for all the task going foward
     // 3. "git branch" - List out all the branches that are availble in your local system
     // 4. Write the test case in your local system save all the files
-<<<<<<< HEAD
-    // 5. "git status" - Validate al the files that you have changed/added/delete
-    // 6. "git add ." - Add all the changed files to your local git area
-    // 7.  "git commit -m "message" " - Commit all the changes to your local
-=======
     // 5. "git status" - Validate all the files that you have changed/added/delete
     // 6. "git add ." - Add all the changed files to your local git area
     // 7. "git commit -m "message" " - Commit all the changes to your local
->>>>>>> f8e9333 (added git concepts)
     // git with the message
         // 7.1. git checkout master - Switch to master branch
         // 7.2. git pull - Pull all the changes from your remote master 
