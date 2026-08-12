@@ -31,9 +31,26 @@
     // 11. git checkout -b branchName - Create a new branch going forward for all the new task
     // 12 . Complete writing the test case and follow the steps from #3, #4 and #8(change the branch name)
 
-
+    // follow #9 - #12
 
 
 
 
 // 2. If the Repository is already available
+
+    // 0. "git clone repoURL" - Clone the repository in your local system
+    // 1. "npm install" - Install all the dependencies
+    // 2. "git checkout -b featureBrach" - Create a new brach for all the task going foward
+    // 3. "git branch" - List out all the branches that are availble in your local system
+    // 4. Write the test case in your local system save all the files
+    // 5. "git status" - Validate al the files that you have changed/added/delete
+    // 6. "git add ." - Add all the changed files to your local git area
+    // 7.  "git commit -m "message" " - Commit all the changes to your local
+    // git with the message
+        // 7.1. git checkout master - Switch to master branch
+        // 7.2. git pull - Pull all the changes from your remote master 
+        // branch to your local master branch
+        // 7.3. git checkout featureBranch - Switch to the feature branch
+        // 
+
+
