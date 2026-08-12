@@ -51,6 +51,7 @@
         // 7.2. git pull - Pull all the changes from your remote master 
         // branch to your local master branch
         // 7.3. git checkout featureBranch - Switch to the feature branch
-        // 
+        // 7.4 . git rebase --continue  - use this only if you get the conflict
+        // and you have resolved the conflict in your local
 
 
