@@ -1,10 +1,19 @@
-import { test, expect } from '@playwright/test';
+// TestNG, Junit, BDD cucumber, Playwright
 
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
-  await page.getByRole('link', { name: 'Get started' }).click();
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
-});
+// test(), expect()
 
-// GitHub - 
+import {test, expect} from '@playwright/test'
 
+// async-await
+
+test("Title",  async function({page}){
+  await page.goto("https://practicetestautomation.com/practice-test-login/")
+  await page.locator("#username").fill("student")
+  await page.locator("#password").fill("Password123")
+  await page.locator("#submit").click()
+  await expect(page.locator("h1.post-title")).toHaveText("Logged In Successfully")
+})
+
+// JS-TS - Asynchronous - 
+
+// Promise - pending, successful, Rejected
