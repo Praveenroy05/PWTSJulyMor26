@@ -75,6 +75,55 @@ tagname[attribute='value'] // input[id='username']
 
 4. Write css traversing from parent to child:
 
+parentLocator childLocator
+
+Ex: #login h2 - by placing a single space between parent and child
+
+
+first() - 
+last()
+nth(index) - 0 based index
+
+page.locator("#login h2").first() - to get the first matching element
+page.locator("#login h2").last() - to get the last matching element
+page.locator("#login h2").nth(1) - to get the 2nd matching element
+
+
+
+2. XPATH
+
+Abosulte xpath - / - /html/body/div/div/section/section/h2
+Relative xpath - // - //h2
+
+
+Syntax:
+
+1. //tagname[@attribute = 'value']   - //input[@id='username']
+  //*[@attribute = 'value'] - //*[@id='username']
+
+
+2. (//*[@attribute = 'value'])[1] - (//input)[2] - Index starts with 1 in xpath
+
+
+3. // Parent to child - by using /(immediate child) or //(any childern - can be descandant)
+
+Parent to immediate child - //div[@id='userName-wrapper']/div[2]/input
+Parent to any children - (//div[@id='userName-wrapper']//input)[1]
+
+
+4. Move from one sibling to another sibling
+
+<label for="username">Username</label> - preceding-sibling to input tag element
+<input type="text" name="username" id="username"> - follwing-sibling to label tag element
+
+//tagname[@attribute='value']/following-sibling::input[@id='username']
+//tagname[@attribute='value']/preceding-sibling::label
+
+
+//label[@for='password']/following-sibling::input
+//input[@id='username']/preceding-sibling::label
+
+
 
 
 
