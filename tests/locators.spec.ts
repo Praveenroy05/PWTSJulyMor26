@@ -124,6 +124,84 @@ Parent to any children - (//div[@id='userName-wrapper']//input)[1]
 //input[@id='username']/preceding-sibling::label
 
 
+5. By using text value of an element
+
+//*[text()='Text value of an element']
+
+//*[text() = 'Test login'] - //h2[text()='Test login']
+
+
+
+6. //tagname[contains(text(), 'some part of text value')]
+
+//li[contains(text(),'positive and negative LogIn')]
+
+// input[contains(@id , 'user')]
+
+
+
+// To write the locator using css selector or xpath - page.locator("")
+
+page.locator("#username")
+page.locator("//*[@id='username']")
+
+
+// 3. Playwright special methods for locators
+
+
+// GetBy locators in Playwright
+
+
+These are the recommebded built-in locators
+
+
+page.getByRole()
+page.getByText()
+page.getByLabel()
+page.getByAltText()
+page.getByPlaceholder()
+page.getByTitle()
+page.getByTestId()
+
+
+1. page.getByRole()
+
+
+<h2>ad</h2>
+<h2>ads</h2>
+
+2. page.getByText('ad', {exact:true}) - To locate by text content
+
+3. page.getByLabel() - To locate a form control by associated label text
+
+  1. When you have "for" as an attribute for an element that have been developed
+  using <label> - there we can directly use page.getByLabel("label text")
+  2. When you find out "<input>" inside the <label>
+
+  <label class="form-check-label" <input....>>Tuesday</label>
+  page.getByLabel("Tuesday")
+
+
+4. page.getByAltText() - to locate an element, usually image, by its text alternative.
+("alt" as an attribute)
+
+page.getByAltText("logo image")
+
+5. page.getByPlaceholder() - to locate an INPUT by "placeholder" as an attribute
+
+page.getByPlaceholder("First Name")
+page.getByPlaceholder("Enter your full name")
+
+
+6. page.getByTitle() - to locate an element by using it's "title" attribute
+
+page.getByTilte("HyperText Markup Language")
+
+7. page.getByTestId() - to locate an element based on it's "data-testid" attribute
+
+page.getByTestId('directions')
+
+
 
 
 
