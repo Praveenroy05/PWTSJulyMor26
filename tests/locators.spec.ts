@@ -164,7 +164,14 @@ page.getByTitle()
 page.getByTestId()
 
 
-1. page.getByRole()
+1. page.getByRole("rolename", {name:'textvalue of element})
+
+// heading - <h1-h6>
+// button - <button> or class="btn"
+// textbox - <input> or <textarea>
+// radio - type="radio"
+// checkbox - type = "checkbox"
+// link - <a> </a>
 
 
 <h2>ad</h2>
@@ -203,6 +210,24 @@ page.getByTestId('directions')
 
 
 
+
+
+
+1. Assignment - https://testautomationpractice.blogspot.com/2018/09/automation-form.html
+
+Write the xpath for Dynamic Web Table:
+
+for System - CPU%
+
+2. Write 20 different locators using css selector, xpath and getBy Locators
+
+
+
+
+
+
+npx playwright test 
+npx playwright test tests/UIBasics.spec.ts
 
 
 
