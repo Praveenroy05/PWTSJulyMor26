@@ -231,4 +231,47 @@ npx playwright test tests/UIBasics.spec.ts
 
 
 
+
+
+
+
+
+
+table
+tbody - Total body of the table
+tr - Table row
+td - Table column (Table definition)
+th - Table Header
+
+
+
+//tr[td[text()='Chrome']]/td - Identify all the columns of Chrome row
+
+//th[text()='CPU (%)'] - Identify the CPU % column
+
+count(//th[text()='CPU (%)']/preceding-sibling::th)+1 - return the number of preceding-sibling
+
+- 4 - cpu is at 5th
+
+
+
+//tr[td[text()='Chrome']]/td[count(//th[text()='CPU (%)']/preceding-sibling::th)+1]
+
+//tr[td[text()='Chrome']]/td[count(//th[text()='CPU (%)']/preceding-sibling::th)+1]
+
+function locator(name, columnName){
+  return //tr[td[text()='+name+']]/td[count(//th[text()='+columnName+']/preceding-sibling::th)+1]
+}
+
+
+locator("Chrome", "Disk")
+
+
  */
+
+function locator(name:string, columnName:string){
+  return "//tr[td[text()='"+name+"']]/td[count(//th[text()='"+columnName+"']/preceding-sibling::th)+1]"
+}
+
+
+console.log(locator("Chrome", "CPU (%)"))
