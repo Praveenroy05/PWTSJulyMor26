@@ -3,7 +3,7 @@
 // right click - click({button:'right'})
 // Mouse Hover - hover()
 // Scrolling - scrollIntoViewIfNeeded()
-// Drag and Drop
+// Drag and Drop - Locator.dragTo(targetElementLocator)
 
 import {test, expect} from '@playwright/test'
 
@@ -37,5 +37,19 @@ test("Handling scrolling on the page",  async ({page})=>{
 })
 
 test("Handling Drag and Drop",  async ({page})=>{
+
+    await page.goto("https://testautomationpractice.blogspot.com/")
+    const sourceElement = page.locator("div#draggable")
+    const targetElement = page.locator("div#droppable")
+
+    // Locator.dragTo(locator)
+   // await sourceElement.dragTo(targetElement)
+
+    await sourceElement.hover()
+    await page.mouse.down()
+    await targetElement.hover()
+    await page.mouse.up()
+
+    await expect(page.locator("div#droppable p")).toHaveText("Dropped!")
     
 })
