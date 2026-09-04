@@ -17,9 +17,9 @@ test("Handling file upload", async ({page})=>{
 
     // setInputFiles("path of the file")
     await page.locator("#filesToUpload")
-    .setInputFiles(["testdata/AILLM.jpg","testdata/AILLM1.jpg"])
+    .setInputFiles(["downloads/sampleFile.jpeg","testdata/AILLM1.jpg"])
 
-    await expect(page.locator("#fileList li").first()).toHaveText("AILLM.jpg")
+    await expect(page.locator("#fileList li").first()).toHaveText("sampleFile.jpeg")
     await expect(page.locator("#fileList li").last()).toHaveText("AILLM1.jpg")
 
 })
