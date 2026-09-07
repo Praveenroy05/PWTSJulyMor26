@@ -23,8 +23,6 @@ import {test, expect} from '@playwright/test'
 test("Handling multiple windows", async ({page})=>{
 
     await page.goto("https://demo.automationtesting.in/Windows.html")
-
-
     const page1 = page.waitForEvent("popup")
     
     // Identify and click on the element which is responsible for generation of "popup" event on the page
