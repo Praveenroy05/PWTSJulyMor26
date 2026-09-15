@@ -34,8 +34,15 @@ class ClassName{
     key: datatype
     key1 :datatype
 
+    constructor() - Special function which helps us in terms of initialising the 
+    value of the variable of a class except static variables. It automatically gets
+    called when an object of a class is created. It can take parameters to initalize 
+    the properties of a class.
+
     constructor()
 
+
+    this - Is a keyword which represents the current class object.
 
 
 
@@ -46,29 +53,64 @@ class ClassName{
 
 class Employee{
 
-    name: string 
-    age : number
-    gender: string 
+    empName: string 
+    empAge : number
+    empID: number 
+    empSalary : number
+    static companyName = "ABC"
 
-    constructor(name:string, age:number, gender:string){
-        this.name= name,
-        this.age = age,
-        this.gender= gender
+    constructor(name:string, age:number, id:number, salary:number){
+        this.empName = name // emp.empName = "Rahul", emp2.empName = "Divya"
+        this.empAge = age
+        this.empID = id
+        this.empSalary = salary 
     }
 
+    employeeInformation(dept:string){
+        console.log(this.empName, this.empAge, this.empID,  
+            this.empSalary, dept) 
+    }
 
-
-
+    static displayCompany(){
+        console.log(Employee.companyName);
+    }
 }
 
-const emp = new Employee("Rahul", 34, "Male")
-console.log(Employee.name);
+const emp = new Employee("Rahul", 34, 101, 100000)
+console.log(emp.empName);
+Employee.displayCompany()
+emp.employeeInformation("IT")
 
-const emp1 = new Employee("Priya", 25, "Female")
-const emp2 = new Employee("Diyva", 26, "Female")
+const emp1 = new Employee("Priya", 25, 102, 200000)
+emp1.employeeInformation("HR")
+const emp2 = new Employee("Divya", 26, 103, 150000)
+emp2.employeeInformation("IT")
 
 console.log(emp);
 
+
+
+// Inhertance - Acquiring the properties and methods from the parent class to the child class
+// extends
+
+class Manager extends Employee{
+
+    bonus:number
+
+     constructor(name:string, age:number, id:number, salary:number, bonus:number){
+        super(name, age,id, salary)
+        this.bonus = bonus     
+    }
+
+    displayManagerInfo(){
+        this.employeeInformation("IT")
+        console.log(this.bonus);
+    }
+}
+
+const mgr = new Manager("Rahul", 34, 101, 100000, 10000)
+mgr.displayManagerInfo()
+mgr.employeeInformation("HR")
 
 
 
