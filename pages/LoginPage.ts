@@ -39,6 +39,12 @@ export class LoginPage{
         await this.loginBtn.click()
     }
 
+    //     async invalidLogin(username:string, incorrectpassword: string){
+    //     await this.email.fill(username)
+    //     await this.password.fill(incorrectpassword)
+    //     await this.loginBtn.click()
+    // }
+
 
 }
 
