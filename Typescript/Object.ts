@@ -47,5 +47,13 @@ const emp3 =
 
 
 
-
+// {
+//     "name" : "Priya",
+//     "age": 27,
+//     "city": "New Delhi",
+//     "skills": ["TS", "JS"],
+//     "fun": function(){
+//         console.log(this.name, this.age, this.skills);    
+//     }
+// }
 
