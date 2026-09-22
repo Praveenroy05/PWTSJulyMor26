@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Praveenroy05/PWTSJulyMor26#readme",
   "devDependencies": {
     "@playwright/test": "^1.62.1",
-    "@types/node": "^26.1.2"
+    "@types/node": "^26.1.2",
+    "xlsx": "^0.18.5"
   }
 }
