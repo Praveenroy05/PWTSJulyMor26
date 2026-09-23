@@ -1,12 +1,26 @@
 import { defineConfig, devices } from '@playwright/test';
+import { log } from 'console';
 
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-// import dotenv from 'dotenv';
-// import path from 'path';
-// dotenv.config({ path: path.resolve(__dirname, '.env') });
+ import dotenv from 'dotenv';
+ import path from 'path';
+
+ // dotenv - is a library which helps us in loading the data from .env file
+ // process.env - Is a global object which read the data from .env file
+
+
+ const ENV_NAME = process.env.ENV || 'stg'
+
+
+ dotenv.config({ path: path.resolve(__dirname, 'testdata', `${ENV_NAME}.env`) });
+
+ console.log(process.env.EMAIL);
+ console.log(process.env.BASE_URL);
+ 
+
 
 /*
 

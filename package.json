@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "fullTest" : "npx playwright test",
+    "test:qa": "set ENV=qa&& npx playwright test tests/LoginPageTestUsingEnv.spec.ts",
+    "test:stg": "set ENV=stg&& npx playwright test tests/LoginPageTestUsingEnv.spec.ts",
+    "test:prod": "set ENV=prod&& npx playwright test tests/LoginPageTestUsingEnv.spec.ts"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Praveenroy05/PWTSJulyMor26.git"
@@ -20,5 +25,8 @@
     "@playwright/test": "^1.62.1",
     "@types/node": "^26.1.2",
     "xlsx": "^0.18.5"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.3"
   }
 }
