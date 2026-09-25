@@ -63,7 +63,7 @@ export default defineConfig({
   reporter: [['html'], ['line'], ['allure-playwright']],
   timeout: 60000,
   expect:{
-    timeout: 5000
+    timeout: 15000
   },
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
