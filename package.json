@@ -4,10 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "fullTest" : "npx playwright test",
+    "fullTest": "npx playwright test",
     "test:qa": "set ENV=qa&& npx playwright test tests/LoginPageTestUsingEnv.spec.ts",
     "test:stg": "set ENV=stg&& npx playwright test tests/LoginPageTestUsingEnv.spec.ts",
-    "test:prod": "set ENV=prod&& npx playwright test tests/LoginPageTestUsingEnv.spec.ts"
+    "test:prod": "set ENV=prod&& npx playwright test tests/LoginPageTestUsingEnv.spec.ts",
+    "smokeTest": "npx playwright test -g @smoke",
+    "regressionTest": "npx playwright test -g @regression",
+    "allure:clean": "powershell -Command \"if(Test-path allure-results) {Remove-item -Force allure-results}\"",
+    "allure:report": "npx allure serve allure-results",
+    "test:allure": "npm run allure:clean && npm run smokeTest && npm run allure:report"
+
   },
   "repository": {
     "type": "git",
@@ -24,6 +30,8 @@
   "devDependencies": {
     "@playwright/test": "^1.62.1",
     "@types/node": "^26.1.2",
+    "allure-commandline": "^2.46.1",
+    "allure-playwright": "^3.12.2",
     "xlsx": "^0.18.5"
   },
   "dependencies": {

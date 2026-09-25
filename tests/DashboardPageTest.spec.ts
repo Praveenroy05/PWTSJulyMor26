@@ -6,6 +6,8 @@ import data from '../testdata/testdata.json'
 
 const productName = "ADIDAS ORIGINAL"
 
+test.describe.configure({mode: 'serial'})
+
 
 let lp : LoginPage
 let dp: DashboardPage
@@ -17,16 +19,22 @@ test.beforeEach("Common steps", async ({page})=>{
     await lp.loginIntoApplication(data.username, data.password)
 })
 
-test("Search and add the product to cart", async ()=>{
-    await dp.searchProduct(productName, 1)
-    await expect(dp.addToCartMessage).toHaveText("Product Added To Cart")
+test.describe("Dashboard Page Test", async ()=>{
 
+    test("Search and add the product to cart", {tag: '@smoke'}, async ()=>{
+        await test.step("Search and add the product as "+productName, async()=>{
+            await dp.searchProduct(productName, 1)
+        })
+        await test.step("Validate if the success message appeared or not", async ()=>{
+            await expect(dp.addToCartMessage).toHaveText("Product Added To Cart")
+        })
+
+    })
+
+    test("Search and view the product details", {tag: '@regression'}, async ()=>{
+        await dp.searchProduct(productName, 0)
+        await expect(dp.viewPageProductName).toHaveText(productName)
+        await expect(dp.viewPageProductPrice).toHaveText(dp.homePageProductPrice!)
+
+    })
 })
-
-test("Search and view the product details", async ()=>{
-    await dp.searchProduct(productName, 0)
-    await expect(dp.viewPageProductName).toHaveText(productName)
-    await expect(dp.viewPageProductPrice).toHaveText(dp.homePageProductPrice!)
-
-})
-

@@ -20,12 +20,12 @@ test.beforeEach(async ({page})=>{
     await lp.launchURL(data.url)
 })
 
-test("Login Into Application", async ()=>{
+test("@smoke @regression Login Into Application", async ()=>{
     await lp.loginIntoApplication(data.username, data.password)
     await expect(lp.homePageIdentifier).toBeVisible()
 })
 
-test("Login Into Application with invalid creds", async ()=>{
+test("@regression Login Into Application with invalid creds", async ()=>{
     await lp.loginIntoApplication(data.username, data.incorrectPassword)
     await expect(lp.errorMessage).toHaveText("Incorrect email or password.")
 })

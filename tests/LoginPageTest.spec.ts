@@ -6,14 +6,14 @@ const username = "testnHNk@gmail.com"
 const password = "Testing@1234"
 const incorrectPassword = "Test"
 
-test("Login Into Application", async ({page})=>{
+test("Login Into Application",{tag: ['@smoke', '@regression']}, async ({page})=>{
     const lp = new LoginPage(page)
     await lp.launchURL(url)
     await lp.loginIntoApplication(username, password)
     await expect(lp.homePageIdentifier).toBeVisible()
 })
 
-test("Login Into Application with invalid creds", async ({page})=>{
+test("Login Into Application with invalid creds",{tag: '@regression'}, async ({page})=>{
     const lp = new LoginPage(page)
     await lp.launchURL(url)
     await lp.loginIntoApplication(username, incorrectPassword)

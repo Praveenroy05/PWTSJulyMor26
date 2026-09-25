@@ -15,7 +15,9 @@ import { log } from 'console';
  const ENV_NAME = process.env.ENV || 'stg'
 
 
- dotenv.config({ path: path.resolve(__dirname, 'testdata', `${ENV_NAME}.env`) });
+ dotenv.config({ 
+  path: path.resolve(__dirname, 'testdata', `${ENV_NAME}.env`) 
+});
 
  console.log(process.env.EMAIL);
  console.log(process.env.BASE_URL);
@@ -56,9 +58,9 @@ export default defineConfig({
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : 1,
+  workers: process.env.CI ? 1 : 5,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: [['html'], ['line'], ['allure-playwright']],
   timeout: 120000,
   expect:{
     timeout: 15000
@@ -72,7 +74,7 @@ export default defineConfig({
     trace: 'on',
     screenshot:'on',
     video:'on',
-    headless : false,
+    headless : true,
     // launchOptions:{
     //   slowMo: 1000
     // }
