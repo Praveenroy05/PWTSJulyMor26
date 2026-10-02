@@ -13,7 +13,6 @@
     "allure:clean": "powershell -Command \"if(Test-path allure-results) {Remove-item -Force allure-results}\"",
     "allure:report": "npx allure serve allure-results",
     "test:allure": "npm run allure:clean && npm run smokeTest && npm run allure:report"
-
   },
   "repository": {
     "type": "git",
@@ -32,6 +31,7 @@
     "@types/node": "^26.1.2",
     "allure-commandline": "^2.46.1",
     "allure-playwright": "^3.12.2",
+    "mysql2": "^3.24.5",
     "xlsx": "^0.18.5"
   },
   "dependencies": {

@@ -4,6 +4,9 @@
 import { expect, test } from '@playwright/test';
 import { PracticeTestLoggedInPage, PracticeTestLoginPage } from './pages/PracticeTestLoginPages';
 
+const encodedUsername = 'c3R1ZGVudA==';
+const encodedPassword = 'UGFzc3dvcmQxMjM=';
+
 test.describe('Positive Functional Scenarios', () => {
   test('[P1] Login with documented valid credentials', async ({ page }) => {
     const loginPage = new PracticeTestLoginPage(page);
@@ -16,7 +19,10 @@ test.describe('Positive Functional Scenarios', () => {
     await expect(loginPage.submitButton).toBeVisible();
 
     // 2. Enter the documented credentials and submit.
-    await loginPage.fillCredentials('student', 'Password123');
+    await loginPage.fillCredentials(
+      Buffer.from(encodedUsername, 'base64').toString('utf8'),
+      Buffer.from(encodedPassword, 'base64').toString('utf8'),
+    );
     await loginPage.submit();
     await expect(page).toHaveURL(/\/logged-in-successfully\/$/);
     await expect(loggedInPage.heading).toBeVisible();
